@@ -13,27 +13,27 @@ else:
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = prefix + os.path.join(app.root_path, 'data.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False # 关闭对模型修改的监控
+app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False # close the supervise of the model changing.
 # loading config
 db = SQLAlchemy(app)
 
 # create database model
-class User(db.Model):  # 表名: user
-    id = db.Column(db.Integer, primary_key=True)  # 主键
-    name = db.Column(db.String(20))  # 用户名
+class User(db.Model):  # list name: user
+    id = db.Column(db.Integer, primary_key=True)  # subject
+    name = db.Column(db.String(20))  # user name
 
 
-class Movie(db.Model):  # 表名: movie
-    id = db.Column(db.Integer, primary_key=True)  # 主键
-    title = db.Column(db.String(60))  # 电影标题
-    year = db.Column(db.String(4))  # 电影年份
+class Movie(db.Model):  # list name: movie
+    id = db.Column(db.Integer, primary_key=True)  # subject
+    title = db.Column(db.String(60))  # movie title
+    year = db.Column(db.String(4))  # movie years
 
 @app.cli.command()
 def forge():
     """Generate dummy data."""
     db.create_all()
 
-    # 全局的两个变量移动到这个函数内
+    # global variables
     name = 'hllee'
     movies = [
         {'title': 'My Neighbor Totoro', 'year': '1988'},
@@ -66,8 +66,18 @@ def initdb(drop):
     db.create_all()
     click.echo('Initialising database.')
 
+@app.context_processor
+def nameinfo():
+    user = User.query.first()
+    return dict(user=user)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route('/')
 def index():
-    user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index.html', user=user, movies=movies)
+    return render_template('index.html', movies=movies)
+
+

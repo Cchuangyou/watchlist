@@ -1,4 +1,4 @@
-/* 页面整体 */
+/* page set */
 body {
     margin: auto;
     max-width: 580px;
@@ -6,7 +6,7 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-/* 页脚 */
+/* footer */
 footer {
     color: #888;
     margin-top: 15px;
@@ -14,14 +14,14 @@ footer {
     padding: 10px;
 }
 
-/* 头像 */
+/* avatar */
 .avatar {
     width: 40px;
     margin: 0 auto;
     padding-right: 15px;
 }
 
-/* 电影列表 */
+/* movie-list */
 .movie-list {
     list-style-type: none;
     padding: 0;

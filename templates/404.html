@@ -8,22 +8,19 @@
 </head>
 <body>
     <h1>
-        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/Avatar.jpeg') }}">
+        <img alt="nopageavatar" src="{{ url_for('static', filename='images/avatar.png') }}" width="40px">
         {{ user.name }}'s Watchlist
     </h1>
-    <p>{{ movies|length }} Titles</p>
-
     <ul class="movie-list">
-        {% for movie in movies %}
         <li>
-            {{ movie.title }} - {{ movie.year }}
+            Page Not Found - 404
+            <span class="float-right">
+                <a href="{{ url_for('index') }}">Go Back</a>
+            </span>
         </li>
-        {% endfor %}
     </ul>
-    <img alt="walking totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
     <!-- <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/book/3">HelloFlask</a></small>
     </footer> -->
-    
 </body>
 </html>
