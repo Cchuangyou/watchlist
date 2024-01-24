@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ name }}'s Watchlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
 <body>
-    <h1>{{name}}'s Watchlist</h1>
+    <h1>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/Avatar.jpeg') }}">
+        {{name}}'s Watchlist
+    </h1>
     <p>{{ movies|length }} Titles</p>
 
-    <ul>
+    <ul class="movie-list">
         {% for movie in movies %}
         <li>
             {{ movie.title }} - {{ movie.year }}
         </li>
         {% endfor %}
     </ul>
+    <img alt="walking totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
     <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/book/3">HelloFlask</a></small>
     </footer>
+    
 </body>
 </html>
