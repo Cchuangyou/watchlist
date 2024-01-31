@@ -37,7 +37,7 @@ def forge():
     """Generate fake data."""
     db.create_all()
 
-    name = 'Peter'
+    name = 'hllee'
     movies = [
         {'title': 'My Neighbor Totoro', 'year': '1988'},
         {'title': 'Dead Poets Society', 'year': '1989'},
