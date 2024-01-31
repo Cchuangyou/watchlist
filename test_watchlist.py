@@ -1,5 +1,7 @@
 import unittest
-from app import app, db, Movie, User, forge, initdb
+from watchlist import app, db
+from watchlist.models import Movie, User
+from watchlist.commands import forge, initdb
 
 class WatchlistTestcase(unittest.TestCase):
 
@@ -90,7 +92,7 @@ class WatchlistTestcase(unittest.TestCase):
             year='2020'
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
-        self.assertIn('加好了捏.', data)
+        self.assertIn('改好了捏.', data)
         self.assertIn('New Movie', data)
         self.assertEqual(response.status_code, 200)
 
