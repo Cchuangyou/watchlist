@@ -86,6 +86,16 @@ nav li a:hover {
     padding: 3px 5px;
 }
 
+.bilibili {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(to right, #fb7299, #5677fc);
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
 /* 覆盖某些浏览器对 input 元素定义的字体 */
 input[type=submit] {
     font-family: inherit;
