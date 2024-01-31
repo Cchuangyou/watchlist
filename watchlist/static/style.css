@@ -87,13 +87,12 @@ nav li a:hover {
 }
 
 .bilibili {
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
+    display: inline-block;
+    width: 45px;
+    height: 15px;
+    background: url('http://localhost:5000/static/images/bilibili.jpg') no-repeat center center;
+    background-size: 28px 20px;
     text-decoration: none;
-    background: linear-gradient(to right, #fb7299, #5677fc);
-    border-radius: 5px;
-    padding: 3px 5px;
 }
 
 /* 覆盖某些浏览器对 input 元素定义的字体 */

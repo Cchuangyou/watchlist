@@ -21,7 +21,8 @@
                     <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
                 </form>
             {% endif %}
-            <a class="bilibili" href="https://search.bilibili.com/all?keyword={{ movie.title }}" target="_blank" title="Find this movie on Bilibili">Bilibili</a>
+            <a class="bilibili" href="https://search.bilibili.com/all?keyword={{ movie.title }}" target="_blank" title="Find this movie on Bilibili">
+            </a>
         </span>
     </li>
     {% endfor %}
