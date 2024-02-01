@@ -90,7 +90,7 @@ nav li a:hover {
     display: inline-block;
     width: 45px;
     height: 15px;
-    background: url('http://localhost:5000/static/images/bilibili.jpg') no-repeat center center;
+    background: url('https://www.pythonanywhere.com/user/hllee/files/home/hllee/watchlist/watchlist/static/images/bilibili.jpg') no-repeat center center;
     background-size: 28px 20px;
     text-decoration: none;
 }
